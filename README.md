@@ -1,6 +1,6 @@
 # spy-master
 
-This is the spy-master project.
+An online game inspired by Codenames
 
 ## Development mode
 
