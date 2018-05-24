@@ -1,7 +1,8 @@
 (ns spy-master.components.card
   (:require [reagent.core :as r]))
 
-; State management
+;; -------------------------
+;; State management
 (def is-visible (r/atom false))
 
 (defn toggle-state [current-state]
@@ -9,7 +10,8 @@
     false
     true))
 
-; Display
+;; -------------------------
+;; Display
 (defn word-card [word]
   [:div.word-card
     { :class (str (if @is-visible "blue" "default"))
