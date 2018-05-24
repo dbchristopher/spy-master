@@ -1,0 +1,13 @@
+.game-board {
+  padding: 20px;
+  background: #eeeeee;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 160px);
+  grid-gap: 20px;
+  margin-top: 20px;
+}

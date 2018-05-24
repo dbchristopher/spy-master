@@ -1,6 +1,6 @@
 # spy-master
 
-An online game inspired by Codenames
+This is the spy-master project.
 
 ## Development mode
 
@@ -10,7 +10,7 @@ To start the Figwheel compiler, navigate to the project folder and run the follo
 lein figwheel
 ```
 
-Figwheel will automatically push cljs changes to the browser. The server will be available at [http://localhost:3449](http://localhost:3449) once Figwheel starts up.
+Figwheel will automatically push cljs changes to the browser. The server will be available at [http://localhost:3449](http://localhost:3449) once Figwheel starts up. 
 
 Figwheel also starts `nREPL` using the value of the `:nrepl-port` in the `:figwheel`
 config found in `project.clj`. By default the port is set to `7002`.
@@ -29,8 +29,6 @@ To compile [sass](https://github.com/Deraen/sass4clj) sources and then watch for
 ```
 lein sass4clj auto
 ```
-
-
 
 ### Optional development tools
 

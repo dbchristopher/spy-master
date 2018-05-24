@@ -1,0 +1,15 @@
+
+
+.word-card {
+  border: 1px solid rgb(196, 196, 196);
+  padding: 20px;
+  text-align: center;
+  background: white;
+  box-shadow: 1px 1px 1px rgb(220, 220, 220);
+  border-radius: 5px;
+  cursor: pointer;
+  &.blue {
+    border-color: rgb(0, 81, 255);
+    background: rgb(209, 237, 255);
+  }
+}
