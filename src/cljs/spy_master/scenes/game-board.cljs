@@ -9,5 +9,7 @@
 (defn game-board []
   [:div.game-board [:h1 "The overview of cards"]
     [:div [:a {:href "/about"} "go to about page"]]
-    [:div.game-grid [card/word-card "Test Word!"]]])
+    [:div.game-grid
+      [card/word-card "Glasses"]
+      [card/word-card "Spear"]]])
 

@@ -8,6 +8,7 @@
   box-shadow: 1px 1px 1px rgb(220, 220, 220);
   border-radius: 5px;
   cursor: pointer;
+  user-select: none;
   &.blue {
     border-color: rgb(0, 81, 255);
     background: rgb(209, 237, 255);
