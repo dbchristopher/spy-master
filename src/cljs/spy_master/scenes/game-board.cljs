@@ -12,10 +12,6 @@
 (def code-words
   (take 25 (randomized-list dictionary/words)))
 
-; Example for accessing dictionary:
-(.log js/console (first (randomized-list dictionary/words)))
-
-
 (defn game-board []
   [:div.game-board [:h1 "The overview of cards"]
     [:div [:a {:href "/about"} "go to about page"]]
