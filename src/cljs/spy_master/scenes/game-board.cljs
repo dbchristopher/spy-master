@@ -3,15 +3,23 @@
             [spy-master.components.card :as card]
             [spy-master.dictionary :as dictionary]))
 
+
+(defn randomized-list
+  "Split string by new line and randomize list"
+  [dictionary]
+  (clojure.core/shuffle (clojure.string/split dictionary #"\n")))
+
+(def code-words
+  (take 25 (randomized-list dictionary/words)))
+
 ; Example for accessing dictionary:
-; (.log js/console dictionary/words)
+(.log js/console (first (randomized-list dictionary/words)))
+
 
 (defn game-board []
   [:div.game-board [:h1 "The overview of cards"]
     [:div [:a {:href "/about"} "go to about page"]]
     [:div.game-grid
-      [card/word-card "Glasses" :red]
-      [card/word-card "Spear" :blue]
-      [card/word-card "Sample" :civilian]
-      [card/word-card "Candy" :assassin]]])
+    (for [word code-words]
+      ^{:key word} [card/word-card word :civilian])]])
 

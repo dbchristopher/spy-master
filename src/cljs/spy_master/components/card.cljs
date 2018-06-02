@@ -16,8 +16,7 @@
   :red "red",
   :blue "blue",
   :assassin "black",
-  :civilian "brown"
-})
+  :civilian "brown"})
 
 ;; -------------------------
 ;; Display
@@ -26,8 +25,6 @@
   (let [is-visible (r/atom false)]
     (fn []
       [:div.word-card
-          { :class (str (if @is-visible (team color-map) "default"))
-            :on-click #(swap! is-visible toggle-state )}
-          word
-        ])
-      ))
+        { :class (str (if @is-visible (team color-map) "default"))
+          :on-click #(swap! is-visible toggle-state )}
+        word])))
