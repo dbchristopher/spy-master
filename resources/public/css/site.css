@@ -323,7 +323,21 @@ template {
   background: white;
   box-shadow: 1px 1px 1px gainsboro;
   border-radius: 5px;
-  cursor: pointer; }
+  cursor: pointer;
+  user-select: none; }
   .word-card.blue {
-    border-color: #0051ff;
-    background: #d1edff; }
+    border-color: #56adff;
+    background: #d1edff;
+    color: #3877ff; }
+  .word-card.red {
+    border-color: #c85100;
+    background: #ffcfba;
+    color: #c82f00; }
+  .word-card.brown {
+    border-color: #bbb500;
+    background: #fff5d7;
+    color: #a16900; }
+  .word-card.black {
+    border-color: black;
+    background: #3c4650;
+    color: #dcf0f0; }

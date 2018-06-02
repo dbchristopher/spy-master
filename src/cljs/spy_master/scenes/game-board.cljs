@@ -10,6 +10,8 @@
   [:div.game-board [:h1 "The overview of cards"]
     [:div [:a {:href "/about"} "go to about page"]]
     [:div.game-grid
-      [card/word-card "Glasses"]
-      [card/word-card "Spear"]]])
+      [card/word-card "Glasses" :red]
+      [card/word-card "Spear" :blue]
+      [card/word-card "Sample" :civilian]
+      [card/word-card "Candy" :assassin]]])
 

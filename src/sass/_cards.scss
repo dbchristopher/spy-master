@@ -10,7 +10,23 @@
   cursor: pointer;
   user-select: none;
   &.blue {
-    border-color: rgb(0, 81, 255);
+    border-color: rgb(86, 173, 255);
     background: rgb(209, 237, 255);
+    color: rgb(56, 119, 255);
+  }
+  &.red {
+    border-color: rgb(200, 81, 0);
+    background:rgb(255, 207, 186);
+    color: rgb(200, 47, 0);
+  }
+  &.brown {
+    border-color: rgb(187, 181, 0);
+    background:rgb(255, 245, 215);
+    color: rgb(161, 105, 0);
+  }
+  &.black {
+    border-color: rgb(0, 0, 0);
+    background:rgb(60, 70, 80);
+    color: rgb(220, 240, 240);
   }
 }
