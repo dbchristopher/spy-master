@@ -40,7 +40,7 @@ America
 Ankle
 Apathy
 Applause
-Applesauc
+Applesauce
 Application
 Archaeologist
 Aristocrat

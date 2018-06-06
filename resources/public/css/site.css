@@ -339,7 +339,8 @@ template {
   user-select: none;
   text-transform: uppercase;
   font-weight: bold;
-  letter-spacing: 1px; }
+  letter-spacing: 1px;
+  color: #504650; }
   .word-card.blue {
     border-color: #56adff;
     background: #d1edff;
