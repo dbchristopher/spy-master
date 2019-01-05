@@ -357,3 +357,20 @@ template {
     border-color: black;
     background: #3c4650;
     color: #dcf0f0; }
+
+.card-map {
+  width: 300px;
+  height: 300px;
+  background: #ffffff;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 650px) {
+    .card-map {
+      grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 1024px) {
+    .card-map {
+      grid-template-columns: repeat(5, 1fr); } }

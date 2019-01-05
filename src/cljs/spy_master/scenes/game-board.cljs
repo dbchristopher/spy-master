@@ -30,12 +30,25 @@
 
 (def code-words (map unify roles (randomized-list dictionary/words)))
 
-; Render word list
+
+; Render spymaster "map" visual key
+; ===========================================
+
+(defn card-map []
+  [:div.card-map
+    (for [[role word] code-words]
+      ^{:key word} [:div { :class (str "card-map__item " role)} role])])
+
+
+; Render scene
 ; ===========================================
 (defn game-board []
   [:div.game-board [:h1 "The overview of cards"]
     [:div [:a {:href "/about"} "go to about page"]]
     [:div.game-grid
     (for [[role word] code-words]
-      ^{:key word} [card/word-card word role])]])
+      ^{:key word} [card/word-card word role])]
+    (card-map)])
+
+
 
