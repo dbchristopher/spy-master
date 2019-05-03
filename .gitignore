@@ -1,4 +1,8 @@
-/target
+/target/classes
+/target/cljsbuild/public/js
+/target/cljsbuild-crossoven
+/target/stale
+/target/repl-port
 /classes
 /checkouts
 profiles.clj
