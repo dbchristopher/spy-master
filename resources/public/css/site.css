@@ -358,19 +358,52 @@ template {
     background: #3c4650;
     color: #dcf0f0; }
 
-.card-map {
+.map-wrapper {
+  border-radius: 10px;
   width: 300px;
-  height: 300px;
-  background: #ffffff;
+  height: 330px;
+  background: #160e00;
+  padding: 5px 10px;
   position: absolute;
   bottom: 10px;
   left: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   display: grid;
-  grid-gap: 10px;
+  grid-template-rows: 10px 1fr 10px;
+  justify-items: center;
+  grid-gap: 10px; }
+
+.first-team {
+  width: 50%;
+  height: 5px; }
+  .first-team.red {
+    background: #c85100; }
+  .first-team.blue {
+    background: #56adff; }
+
+.card-map {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-gap: 5px;
   grid-template-columns: repeat(2, 1fr); }
+  .card-map.red {
+    border: 1px solid #c85100; }
+  .card-map.blue {
+    border: 1px solid #56adff; }
   @media (min-width: 650px) {
     .card-map {
       grid-template-columns: repeat(3, 1fr); } }
   @media (min-width: 1024px) {
     .card-map {
       grid-template-columns: repeat(5, 1fr); } }
+  .card-map__item {
+    border-radius: 5px; }
+  .card-map .blue {
+    background: #56adff; }
+  .card-map .red {
+    background: #c85100; }
+  .card-map .civilian {
+    background: #ffefc0; }
+  .card-map .assassin {
+    background: #362e18; }

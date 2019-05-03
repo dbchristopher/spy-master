@@ -8,19 +8,22 @@
 (defn randomized-list
   "Split string by new line and randomize order"
   [dictionary]
-  (shuffle (clojure.string/split dictionary #"\n")))
+  (shuffle (distinct (clojure.string/split dictionary #"\n"))))
 
 ; Define 25 roles:
 ; 8 Blue, 8 Red, 8 Civilian, 1 Assassin
 ; ===========================================
+(def blue-team-count (+ 8 (rand-int 2)))
+(def red-team-count (- 17 blue-team-count))
+
 (def roles
   (shuffle
     (flatten
       (conj
         '(:assassin)
-        (take 8 (repeatedly #(keyword :blue)))
-        (take 8 (repeatedly #(keyword :red)))
-        (take 8 (repeatedly #(keyword :civilian)))))))
+        (take blue-team-count (repeatedly #(keyword :blue)))
+        (take red-team-count (repeatedly #(keyword :red)))
+        (take 7 (repeatedly #(keyword :civilian)))))))
 
 ; Combine roles and words
 ; ===========================================
@@ -34,10 +37,15 @@
 ; Render spymaster "map" visual key
 ; ===========================================
 
+(def map-class (if (> blue-team-count red-team-count) "blue" "red"))
+
 (defn card-map []
-  [:div.card-map
-    (for [[role word] code-words]
-      ^{:key word} [:div { :class (str "card-map__item " role)} role])])
+  [:div.map-wrapper
+    [:div {:class (str "first-team " map-class)}]
+    [:div.card-map
+      (for [[role word] code-words]
+        ^{:key word} [:div { :class (str "card-map__item " (name role))}])]
+    [:div {:class (str "first-team " map-class)}]])
 
 
 ; Render scene
