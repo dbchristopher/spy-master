@@ -30,7 +30,11 @@
   :min-lein-version "2.5.0"
   :uberjar-name "spy-master.jar"
   :main spy-master.server
-  :jvm-opts ["--add-modules" "java.xml.bind"]
+    :jvm-opts ~(let [version     (System/getProperty "java.version")
+                   [major _ _] (clojure.string/split version #"\.")]
+               (if (>= (java.lang.Integer/parseInt major) 9)
+                 ["--add-modules" "java.xml.bind"]
+                 []))
   :clean-targets ^{:protect false}
   [:target-path
    [:cljsbuild :builds :app :compiler :output-dir]
