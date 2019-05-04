@@ -45,7 +45,7 @@
 
   :minify-assets
   {:assets
-   {"resources/public/css/site.min.css" "resources/public/css/site.css"}}
+   {"target/cljsbuild/public/css/site.min.css" "target/cljsbuild/public/css/site.css"}}
 
   :cljsbuild
   {:builds {:min
@@ -79,12 +79,12 @@
    :nrepl-port 7002
    :nrepl-middleware ["cemerick.piggieback/wrap-cljs-repl"
                       ]
-   :css-dirs ["resources/public/css"]
+   :css-dirs ["target/cljsbuild/public/css"]
    :ring-handler spy-master.handler/app}
 
 
   :sass {:source-paths ["src/sass"]
-         :target-path "resources/public/css"}
+         :target-path "target/cljsbuild/public/css"}
 
   :profiles {:dev {:repl-options {:init-ns spy-master.repl
                                   :nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
