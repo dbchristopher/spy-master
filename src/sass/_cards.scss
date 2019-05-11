@@ -1,36 +1,59 @@
+.card {
+  background-color: transparent;
+  perspective: 1000px;
+}
 
+.card-inner {
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  height: 200px;
+}
 
-.word-card {
-  border: 1px solid rgb(196, 196, 196);
-  padding: 40px 0;
+.card.visible .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   text-align: center;
-  background: white;
-  box-shadow: 1px 1px 1px rgb(220, 220, 220);
+  padding: 40px 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
   border-radius: 5px;
   cursor: pointer;
   user-select: none;
   text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 1px;
-  color: rgb(80,70,80);
+}
+
+.card-front {
+  background-color: #bbb;
+  color: black;
+  z-index: 2;
+}
+
+.card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+  z-index: 1;
   &.blue {
     border-color: rgb(86, 173, 255);
-    background: rgb(209, 237, 255);
-    color: rgb(56, 119, 255);
+    background: rgb(56, 119, 255);
   }
   &.red {
     border-color: rgb(200, 81, 0);
-    background:rgb(255, 207, 186);
-    color: rgb(200, 47, 0);
+    background: rgb(200, 47, 0);
   }
   &.brown {
     border-color: rgb(187, 181, 0);
-    background:rgb(255, 245, 215);
-    color: rgb(161, 105, 0);
+    background: rgb(161, 105, 0);
   }
   &.black {
     border-color: rgb(0, 0, 0);
-    background:rgb(60, 70, 80);
-    color: rgb(220, 240, 240);
+    background: rgb(60, 70, 80);
   }
 }

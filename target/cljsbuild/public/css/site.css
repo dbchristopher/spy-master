@@ -328,35 +328,55 @@ template {
     .game-grid {
       grid-template-columns: repeat(5, 1fr); } }
 
-.word-card {
-  border: 1px solid #c4c4c4;
-  padding: 40px 0;
+.card {
+  background-color: transparent;
+  perspective: 1000px; }
+
+.card-inner {
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  height: 200px; }
+
+.card.visible .card-inner {
+  transform: rotateY(180deg); }
+
+.card-front,
+.card-back {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   text-align: center;
-  background: white;
-  box-shadow: 1px 1px 1px gainsboro;
+  padding: 40px 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
   border-radius: 5px;
   cursor: pointer;
   user-select: none;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 1px;
-  color: #504650; }
-  .word-card.blue {
+  text-transform: uppercase; }
+
+.card-front {
+  background-color: #bbb;
+  color: black;
+  z-index: 2; }
+
+.card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+  z-index: 1; }
+  .card-back.blue {
     border-color: #56adff;
-    background: #d1edff;
-    color: #3877ff; }
-  .word-card.red {
+    background: #3877ff; }
+  .card-back.red {
     border-color: #c85100;
-    background: #ffcfba;
-    color: #c82f00; }
-  .word-card.brown {
+    background: #c82f00; }
+  .card-back.brown {
     border-color: #bbb500;
-    background: #fff5d7;
-    color: #a16900; }
-  .word-card.black {
+    background: #a16900; }
+  .card-back.black {
     border-color: black;
-    background: #3c4650;
-    color: #dcf0f0; }
+    background: #3c4650; }
 
 .map-wrapper {
   border-radius: 10px;

@@ -23,8 +23,12 @@
 
 (defn word-card [word team]
   (let [is-visible (r/atom false)]
-    (fn []
-      [:div.word-card
-        { :class (str (if @is-visible (team color-map) "default"))
-          :on-click #(swap! is-visible toggle-state )}
-        word])))
+  (fn []
+  [:div
+    { :class (str (if @is-visible "visible" "hidden") " card")
+      :on-click #(swap! is-visible toggle-state)}
+    [:div.card-inner
+      [:div.card-front word]
+      [:div.card-back {:class (team color-map)}
+        [:h1 (str team)]
+      ]]])))
