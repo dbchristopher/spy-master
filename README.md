@@ -1,6 +1,8 @@
 # spy-master
 
-This is the spy-master project.
+A group word game inspired by [Codenames](https://czechgames.com/en/games/).
+
+Play at [Spymaster.rocks](https://www.spymaster.rocks)
 
 ## Development mode
 
@@ -10,7 +12,7 @@ To start the Figwheel compiler, navigate to the project folder and run the follo
 lein figwheel
 ```
 
-Figwheel will automatically push cljs changes to the browser. The server will be available at [http://localhost:3449](http://localhost:3449) once Figwheel starts up. 
+Figwheel will automatically push cljs changes to the browser. The server will be available at [http://localhost:3449](http://localhost:3449) once Figwheel starts up.
 
 Figwheel also starts `nREPL` using the value of the `:nrepl-port` in the `:figwheel`
 config found in `project.clj`. By default the port is set to `7002`.
@@ -25,7 +27,9 @@ lein do clean, run
 The application will now be available at [http://localhost:3000](http://localhost:3000).
 
 ### Style compilation
+
 To compile [sass](https://github.com/Deraen/sass4clj) sources and then watch for changes and recompile until interrupted, run
+
 ```
 lein sass4clj auto
 ```
@@ -37,16 +41,18 @@ Start the browser REPL:
 ```
 $ lein repl
 ```
+
 The Jetty server can be started by running:
 
 ```clojure
 (start-server)
 ```
+
 and stopped by running:
+
 ```clojure
 (stop-server)
 ```
-
 
 ## Building for release
 
@@ -71,6 +77,7 @@ git init
 git add .
 git commit -m "init"
 ```
+
 create your app on Heroku
 
 ```
