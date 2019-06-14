@@ -1,15 +1,27 @@
 # spy-master
 
-A group word game inspired by [Codenames](https://czechgames.com/en/games/).
+A party game inspired by [Codenames](https://czechgames.com/en/games/). Best with more than 4 players.
 
-Play at [Spymaster.rocks](https://www.spymaster.rocks)
+Play at [Spymaster.rocks](https://www.spymaster.rocks), a JAMstack clojurescript app hosted by [Netlify](https://www.netlify.com)
 
 ## Development mode
 
-To start the Figwheel compiler, navigate to the project folder and run the following command in the terminal:
+**To start the Figwheel compiler, navigate to the project folder and run the following command in the terminal:**
 
 ```
 lein figwheel
+```
+
+**To start sass compiler**
+
+```
+lein sass4clj auto
+```
+
+**To connect to nrepl**
+
+```
+lein repl :connect
 ```
 
 Figwheel will automatically push cljs changes to the browser. The server will be available at [http://localhost:3449](http://localhost:3449) once Figwheel starts up.
@@ -25,14 +37,6 @@ lein do clean, run
 ```
 
 The application will now be available at [http://localhost:3000](http://localhost:3000).
-
-### Style compilation
-
-To compile [sass](https://github.com/Deraen/sass4clj) sources and then watch for changes and recompile until interrupted, run
-
-```
-lein sass4clj auto
-```
 
 ### Optional development tools
 
@@ -54,49 +58,8 @@ and stopped by running:
 (stop-server)
 ```
 
-## Building for release
+## Production Build
 
 ```
-lein do clean, uberjar
+lein cljsbuild once min
 ```
-
-## Deploying to Heroku
-
-Make sure you have [Git](http://git-scm.com/downloads) and [Heroku toolbelt](https://toolbelt.heroku.com/) installed, then simply follow the steps below.
-
-Optionally, test that your application runs locally with foreman by running.
-
-```
-foreman start
-```
-
-Now, you can initialize your git repo and commit your application.
-
-```
-git init
-git add .
-git commit -m "init"
-```
-
-create your app on Heroku
-
-```
-heroku create
-```
-
-optionally, create a database for the application
-
-```
-heroku addons:add heroku-postgresql
-```
-
-The connection settings can be found at your [Heroku dashboard](https://dashboard.heroku.com/apps/) under the add-ons for the app.
-
-deploy the application
-
-```
-git push heroku master
-```
-
-Your application should now be deployed to Heroku!
-For further instructions see the [official documentation](https://devcenter.heroku.com/articles/clojure).
