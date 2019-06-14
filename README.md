@@ -61,5 +61,5 @@ and stopped by running:
 ## Production Build
 
 ```
-lein cljsbuild once min
+lein do clean, cljsbuild once min
 ```
