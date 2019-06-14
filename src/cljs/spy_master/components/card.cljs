@@ -30,5 +30,5 @@
     [:div.card-inner
       [:div.card-front word]
       [:div.card-back {:class (team color-map)}
-        [:h1 (str team)]
+        [:span (str team)]
       ]]])))

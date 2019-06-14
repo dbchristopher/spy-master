@@ -3,23 +3,23 @@
   background: #eeeeee;
   min-height: 100vh;
   min-width: 100vw;
-  @media (min-width: 650px) {
+  @media (min-width: $breakpointSM) {
     padding: 40px;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: $breakpointMD) {
     padding: 40px 80px;
   }
 }
 
 .game-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
   margin-top: 20px;
-  @media (min-width: 650px) {
-    grid-template-columns: repeat(3, 1fr);
+  @media (min-width: $breakpointSM) {
+    grid-template-columns: repeat(4, 1fr);
   }
-  @media (min-width: 1024px) {
+  @media (min-width: $breakpointMD) {
     grid-template-columns: repeat(5, 1fr);
   }
 }
