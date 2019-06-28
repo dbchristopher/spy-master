@@ -383,6 +383,7 @@ template {
 .map-wrapper {
   border-radius: 10px;
   width: 150px;
+  opacity: 0.5;
   background: #160e00;
   padding: 5px 10px;
   position: absolute;
@@ -436,3 +437,33 @@ template {
     background: #ffefc0; }
   .card-map .assassin {
     background: #362e18; }
+
+/* RTC TEST */
+.rtc-button-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr; }
+
+.connect {
+  justify-self: left;
+  background: green;
+  padding: 20px;
+  color: white;
+  border: 1px solid #000;
+  border-radius: 5px; }
+
+.disconnect {
+  justify-self: right;
+  background: red;
+  padding: 20px;
+  color: white;
+  border: 1px solid #000;
+  border-radius: 5px; }
+
+.messagebox {
+  margin-top: 30px; }
+  .messagebox input {
+    padding: 10px;
+    margin-left: 5px; }
+
+.send-message {
+  padding: 10px; }

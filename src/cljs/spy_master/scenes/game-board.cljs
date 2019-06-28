@@ -1,7 +1,8 @@
 (ns spy-master.scenes.game-board
   (:require [reagent.core :as reagent :refer [atom]]
             [spy-master.components.card :as card]
-            [spy-master.dictionary :as dictionary]))
+            [spy-master.dictionary :as dictionary]
+            [spy-master.components.chat-box :as chat]))
 
 ; Shuffle dictionary list
 ; ===========================================
@@ -54,9 +55,8 @@
   [:div.game-board [:h1 "The overview of cards"]
     [:div [:a {:href "/about"} "go to about page"]]
     [:div.game-grid
-    (for [[role word] code-words]
-      ^{:key word} [card/word-card word role])]
-    (card-map)])
-
-
+      (for [[role word] code-words]
+        ^{:key word} [card/word-card word role])]
+    (card-map)
+    (chat/chat-box)])
 

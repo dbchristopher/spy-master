@@ -1,6 +1,7 @@
 .map-wrapper {
   border-radius: 10px;
   width: 150px;
+  opacity: 0.5;
   @media (min-width: $breakpointSM) {
     width: 200px;
   }
