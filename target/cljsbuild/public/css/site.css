@@ -305,10 +305,13 @@ template {
   display: none; }
 
 .game-board {
-  padding: 20px;
+  padding: 20px 10px;
   background: #eeeeee;
   min-height: 100vh;
   min-width: 100vw; }
+  @media (min-width: 450px) {
+    .game-board {
+      padding: 20px; } }
   @media (min-width: 650px) {
     .game-board {
       padding: 40px; } }
@@ -319,9 +322,12 @@ template {
 .game-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
+  grid-gap: 5px;
   margin: 20px auto;
   max-width: 1500px; }
+  @media (min-width: 450px) {
+    .game-grid {
+      grid-gap: 20px; } }
   @media (min-width: 650px) {
     .game-grid {
       grid-template-columns: repeat(4, 1fr); } }
@@ -330,7 +336,11 @@ template {
       grid-template-columns: repeat(5, 1fr); } }
 
 .card {
-  background-color: transparent; }
+  background-color: transparent;
+  font-size: 0.75rem; }
+  @media (min-width: 450px) {
+    .card {
+      font-size: 1rem; } }
 
 .card-inner {
   position: relative;

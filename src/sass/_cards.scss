@@ -1,5 +1,9 @@
 .card {
   background-color: transparent;
+  font-size: 0.75rem;
+  @media (min-width: $breakpointXS) {
+    font-size: 1rem;
+  }
 }
 
 .card-inner {

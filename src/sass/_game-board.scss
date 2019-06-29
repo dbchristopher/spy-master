@@ -1,8 +1,11 @@
 .game-board {
-  padding: 20px;
+  padding: 20px 10px;
   background: #eeeeee;
   min-height: 100vh;
   min-width: 100vw;
+  @media (min-width: $breakpointXS) {
+    padding: 20px;
+  }
   @media (min-width: $breakpointSM) {
     padding: 40px;
   }
@@ -14,9 +17,12 @@
 .game-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
+  grid-gap: 5px;
   margin: 20px auto;
   max-width: 1500px;
+  @media (min-width: $breakpointXS) {
+    grid-gap: 20px;
+  }
   @media (min-width: $breakpointSM) {
     grid-template-columns: repeat(4, 1fr);
   }

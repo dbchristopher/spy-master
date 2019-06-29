@@ -52,7 +52,7 @@
 ; Render scene
 ; ===========================================
 (defn game-board []
-  [:div.game-board [:h1 "The overview of cards"]
+  [:div.game-board [:h1 "The Code Names"]
     [:div [:a {:href "/about"} "go to about page"]]
     [:div.game-grid
       (for [[role word] code-words]
