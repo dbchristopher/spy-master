@@ -16,6 +16,7 @@
                  [org.clojure/clojurescript "1.10.238"
                   :scope "provided"]
                  [secretary "1.2.3"]
+                 [funcool/promesa "2.0.1"]
                  [venantius/accountant "0.2.4"
                   :exclusions [org.clojure/tools.reader]]]
 

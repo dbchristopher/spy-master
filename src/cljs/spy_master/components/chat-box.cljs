@@ -1,5 +1,6 @@
 (ns spy-master.components.chat-box
-  (:require [reagent.core :as r]))
+  (:require [reagent.core :as r]
+            [promesa.core :as p]))
 
 
 ; establish data connection
@@ -32,6 +33,13 @@
 
 (set! (.-onicecandidate local-connection) add-remote-ice-candidate)
 (set! (.-onicecandidate remote-connection) add-local-ice-candidate)
+
+; chain promises to establish connection
+(def create-offer (.-createOffer local-connection))
+
+; TODO: use promesa to work through promise chain
+; http://funcool.github.io/promesa/latest
+
 
 
 ; react even handles
