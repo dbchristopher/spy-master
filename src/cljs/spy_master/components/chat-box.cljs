@@ -37,10 +37,15 @@
 ; chain promises to establish connection
 (def create-offer (.-createOffer local-connection))
 
-; TODO: use promesa to work through promise chain
-; http://funcool.github.io/promesa/latest
+; Promises from http://funcool.github.io/promesa/latest
+(def established-connection (-> (p/promise (create-offer))
+                                (p/then #((.-setLocalDescription local-connection) %))
+                                (p/then #((.-setRemoteDescription remote-connection) (.-localDescription local-connection)))
+                                (p/then #((.-createAnswer remote-connection)))
+                                (p/then #((.-setLocalDescription remote-connection) %))
+                                (p/then #((.-setRemoteDescription local-connection) (.-localDescription remote-connection)))))
 
-
+; TODO -- test local connection
 
 ; react even handles
 ; ========================================
